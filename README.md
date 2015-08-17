@@ -9,4 +9,4 @@ Cookie: auth=1; login=1; authenticated=1; admin=1; valid_user=1; valid-user=1; v
 Cookie: auth=true; login=true; authenticated=true; admin=true; valid_user=true; valid-user=true; validuser=true; authenticated-user=true; authenticated_user=true; authenticateduser=true; valid=true; user=true; logged=true; loggedin=true; logged-in=true; logged_in=true; login=true; administrator=true; adminuser=true; admin-user=true; admin_user=true
 
 
-Then use the value (or rather append the string after 'Cookie: ') for testing, e.g. with AuthZ plugin.
+Then use the value (or rather append the string after 'Cookie: ' starting with a semicolon) for testing, e.g. with AuthZ plugin.
