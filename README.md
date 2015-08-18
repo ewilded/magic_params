@@ -1,5 +1,5 @@
 # magic_params
-A simple helper for generating cookie header to test for broken authentication based on existence of predictably-named cookies.
+A simple helper for generating cookie header plus POST/GET variable set to test for broken authentication based on existence of predictably-named cookies/GET/POST params.
 
 Feel free to add some more words to the list, then run the tool, e.g.:
 
