@@ -1,4 +1,4 @@
-# magic_cookies
+# magic_params
 A simple helper for generating cookie header to test for broken authentication based on existence of predictably-named cookies.
 
 Feel free to add some more words to the list, then run the tool, e.g.:
