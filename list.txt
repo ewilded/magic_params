@@ -31,3 +31,6 @@ is_authenticated
 isuser
 is_user
 is-user
+autologin
+auto-login
+auto_login
