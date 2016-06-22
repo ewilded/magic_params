@@ -9,7 +9,7 @@ class magic_params_generator
 
 	private $output_cookies='output_cookies.txt';
 	private $output_query='output_query.txt';
-	private $positive_values=array(1,'true','yes','YES','TRUE','Y','y');
+	private $positive_values=array(1,'true','yes','YES','TRUE','Y','y','True');
 
 	private	$output2_query=array();
 	private $output2_cookie=array();
@@ -30,7 +30,6 @@ class magic_params_generator
 			$this->output2_cookie[$i]=array_merge($this->output2_cookie[$i],$output);
 			$this->output2_query[$i]=array_merge($this->output2_query[$i],$output);
 		}
-
 	}
 	public function __construct()
 	{
@@ -40,7 +39,17 @@ class magic_params_generator
 		{
 
 			// START OF AUTH-SPECIFIC
-			$this->generate_params_set(file($this->auth_words));
+			$words_tmp=$words=file($this->auth_words);
+			foreach($words_tmp as $w)
+			{
+				if(strstr($w,'-')===FALSE) 
+				{
+					$w=trim($w);
+					$words[]=ucfirst($w);
+					$words[]=strtoupper($w);
+				}
+			}		
+			$this->generate_params_set($words);
 		}
 		if($this->type=='ALL'||$this->type=='DEBUG')
 		{
@@ -76,7 +85,6 @@ class magic_params_generator
 			file_put_contents($this->output_query,join('&',$this->output2_query[$i])."\n",FILE_APPEND);
 			file_put_contents($this->output_cookies,join('; ',$this->output2_cookie[$i])."\n",FILE_APPEND);
 		}
-
 	}
 // END OF AUTH-SPECIFIC
 }
