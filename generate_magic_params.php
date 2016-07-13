@@ -93,8 +93,8 @@ class magic_params_generator
 				{
 					file_put_contents($this->output_query,join('&',$query2_part)."\n",FILE_APPEND);
 					file_put_contents($this->output_cookies,join('; ',$cookie2_part)."\n",FILE_APPEND);	
-					$query_part2=array();
-					$cookie_part2=array();
+					$query2_part=array();
+					$cookie2_part=array();
 					$byte_count=0;
 				}		
 			}
